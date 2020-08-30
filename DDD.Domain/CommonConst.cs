@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DDD.WinForm.Common
 {
-    public class Class1
+    public static class CommonConst
     {
-        public static int Add(int v1, int v2)
-        {
-            return v1 + v2;
-        }
+        public const string ConnectionString = @"Data Source=C:\Users\aratan\Desktop\DDD.db;Version=3;";
     }
 }
