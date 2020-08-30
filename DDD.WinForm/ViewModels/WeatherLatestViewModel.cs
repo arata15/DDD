@@ -1,26 +1,83 @@
 ﻿using DDD.Domain.Repositories;
 using DDD.Domain.ValueObjects;
-using DDD.WinForm.Common;
+using DDD.Infrastructure.SQLite;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace DDD.WinForm.ViewModels
 {
-    public class WeatherLatestViewModel
+    public class WeatherLatestViewModel : INotifyPropertyChanged
     {
         private IWeatherRepository _weather;
+
+        public WeatherLatestViewModel()
+            :this(new WeatherSQLite())
+        {
+        }
 
         public WeatherLatestViewModel(IWeatherRepository weather)
         {
             _weather = weather;
         }
-        public string AreaIdText { get; set; } = string.Empty;
-        public string DataDateText { get; set; } = string.Empty;
-        public string ConditionText { get; set; } = string.Empty;
-        public string TemperatureText { get; set; } = string.Empty;
+
+        private string _areaIdText = string.Empty;
+        public string AreaIdText 
+        {
+            get { return _areaIdText; }
+            set 
+            {
+                if(_areaIdText == value)
+                {
+                    return;
+                }
+                _areaIdText = value;
+                OnPropertyChanged(nameof(AreaIdText));
+            }
+        }
+        private string _dataDateText = string.Empty;
+        public string DataDateText
+        {
+            get { return _dataDateText; }
+            set
+            {
+                if (_dataDateText == value)
+                {
+                    return;
+                }
+                _dataDateText = value;
+                OnPropertyChanged(nameof(DataDateText));
+            }
+        }
+        private string _conditionText = string.Empty;
+        public string ConditionText
+        {
+            get { return _conditionText; }
+            set
+            {
+                if (_conditionText == value)
+                {
+                    return;
+                }
+                _conditionText = value;
+                OnPropertyChanged(nameof(ConditionText));
+            }
+        }
+        private string _temperatureText = string.Empty;
+        public string TemperatureText
+        {
+            get { return _temperatureText; }
+            set
+            {
+                if (_temperatureText == value)
+                {
+                    return;
+                }
+                _temperatureText = value;
+                OnPropertyChanged(nameof(TemperatureText));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void Search()
         {
@@ -31,11 +88,12 @@ namespace DDD.WinForm.ViewModels
                 ConditionText = entity.Condition.Displayvalue;
                 TemperatureText = entity.Temperature.DisplayValueWIthUnitSpace;
             }
+        }
 
-            if(entity.Condition.Value == 1)
-            {
-
-            }
+        public void OnPropertyChanged(string propertyName)
+        {
+           PropertyChanged?.Invoke(this,
+                 new PropertyChangedEventArgs(propertyName));
         }
     }
 }

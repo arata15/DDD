@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD.WinForm.Common
+namespace DDD.Infrastructure.SQLite
 {
-    public static class CommonConst
+    internal class SQLiteHelper
     {
         public const string ConnectionString = @"Data Source=C:\Users\aratan\Desktop\DDD.db;Version=3;";
     }
