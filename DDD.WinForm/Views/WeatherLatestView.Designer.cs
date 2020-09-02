@@ -35,97 +35,103 @@
             this.DataDateLabel = new System.Windows.Forms.Label();
             this.ConditionLabel = new System.Windows.Forms.Label();
             this.TemperatureLabel = new System.Windows.Forms.Label();
-            this.AreaIdTextBox = new System.Windows.Forms.TextBox();
             this.LatestButton = new System.Windows.Forms.Button();
+            this.AreasComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 16);
+            this.label1.Location = new System.Drawing.Point(14, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 19);
+            this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "地域";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 54);
+            this.label2.Location = new System.Drawing.Point(14, 43);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "日時";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 94);
+            this.label3.Location = new System.Drawing.Point(14, 75);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 19);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
             this.label3.Text = "状態";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 133);
+            this.label4.Location = new System.Drawing.Point(14, 106);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 19);
+            this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
             this.label4.Text = "温度";
             // 
             // DataDateLabel
             // 
             this.DataDateLabel.AutoSize = true;
-            this.DataDateLabel.Location = new System.Drawing.Point(93, 54);
+            this.DataDateLabel.Location = new System.Drawing.Point(70, 43);
+            this.DataDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataDateLabel.Name = "DataDateLabel";
-            this.DataDateLabel.Size = new System.Drawing.Size(43, 15);
+            this.DataDateLabel.Size = new System.Drawing.Size(0, 12);
             this.DataDateLabel.TabIndex = 4;
-            this.DataDateLabel.Text = "label5";
             // 
             // ConditionLabel
             // 
             this.ConditionLabel.AutoSize = true;
-            this.ConditionLabel.Location = new System.Drawing.Point(93, 94);
+            this.ConditionLabel.Location = new System.Drawing.Point(70, 75);
+            this.ConditionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ConditionLabel.Name = "ConditionLabel";
-            this.ConditionLabel.Size = new System.Drawing.Size(43, 15);
+            this.ConditionLabel.Size = new System.Drawing.Size(0, 12);
             this.ConditionLabel.TabIndex = 5;
-            this.ConditionLabel.Text = "label6";
             // 
             // TemperatureLabel
             // 
             this.TemperatureLabel.AutoSize = true;
-            this.TemperatureLabel.Location = new System.Drawing.Point(93, 133);
+            this.TemperatureLabel.Location = new System.Drawing.Point(70, 106);
+            this.TemperatureLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TemperatureLabel.Name = "TemperatureLabel";
-            this.TemperatureLabel.Size = new System.Drawing.Size(43, 15);
+            this.TemperatureLabel.Size = new System.Drawing.Size(0, 12);
             this.TemperatureLabel.TabIndex = 6;
-            this.TemperatureLabel.Text = "label7";
-            // 
-            // AreaIdTextBox
-            // 
-            this.AreaIdTextBox.Location = new System.Drawing.Point(86, 13);
-            this.AreaIdTextBox.Name = "AreaIdTextBox";
-            this.AreaIdTextBox.Size = new System.Drawing.Size(102, 22);
-            this.AreaIdTextBox.TabIndex = 7;
             // 
             // LatestButton
             // 
-            this.LatestButton.Location = new System.Drawing.Point(194, 9);
+            this.LatestButton.Location = new System.Drawing.Point(146, 7);
+            this.LatestButton.Margin = new System.Windows.Forms.Padding(2);
             this.LatestButton.Name = "LatestButton";
-            this.LatestButton.Size = new System.Drawing.Size(79, 28);
+            this.LatestButton.Size = new System.Drawing.Size(59, 22);
             this.LatestButton.TabIndex = 8;
             this.LatestButton.Text = "直近値";
             this.LatestButton.UseVisualStyleBackColor = true;
             this.LatestButton.Click += new System.EventHandler(this.LatestButton_Click);
             // 
+            // AreasComboBox
+            // 
+            this.AreasComboBox.FormattingEnabled = true;
+            this.AreasComboBox.Location = new System.Drawing.Point(48, 9);
+            this.AreasComboBox.Name = "AreasComboBox";
+            this.AreasComboBox.Size = new System.Drawing.Size(85, 20);
+            this.AreasComboBox.TabIndex = 9;
+            // 
             // WeatherLatestView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 262);
+            this.ClientSize = new System.Drawing.Size(214, 210);
+            this.Controls.Add(this.AreasComboBox);
             this.Controls.Add(this.LatestButton);
-            this.Controls.Add(this.AreaIdTextBox);
             this.Controls.Add(this.TemperatureLabel);
             this.Controls.Add(this.ConditionLabel);
             this.Controls.Add(this.DataDateLabel);
@@ -133,6 +139,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WeatherLatestView";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -149,8 +156,8 @@
         private System.Windows.Forms.Label DataDateLabel;
         private System.Windows.Forms.Label ConditionLabel;
         private System.Windows.Forms.Label TemperatureLabel;
-        private System.Windows.Forms.TextBox AreaIdTextBox;
         private System.Windows.Forms.Button LatestButton;
+        private System.Windows.Forms.ComboBox AreasComboBox;
     }
 }
 

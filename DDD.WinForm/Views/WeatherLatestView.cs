@@ -1,4 +1,5 @@
-﻿using DDD.WinForm.ViewModels;
+﻿using DDD.Domain.Entities;
+using DDD.WinForm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,13 @@ namespace DDD.WinForm
         {
             InitializeComponent();
 
-            this.AreaIdTextBox.DataBindings.Add(
-                "Text", _viewModel, nameof(_viewModel.AreaIdText));
+            this.AreasComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.AreasComboBox.DataBindings.Add(
+                "SelectedValue", _viewModel, nameof(_viewModel.SelectedAreaId));
+            this.AreasComboBox.DataBindings.Add(
+                "DataSource", _viewModel, nameof(_viewModel.Areas));
+            this.AreasComboBox.ValueMember = nameof(AreaEntity.AreaId);
+            this.AreasComboBox.DisplayMember = nameof(AreaEntity.AreaName);
             this.DataDateLabel.DataBindings.Add(
                 "Text", _viewModel, nameof(_viewModel.DataDateText));
             this.ConditionLabel.DataBindings.Add(
