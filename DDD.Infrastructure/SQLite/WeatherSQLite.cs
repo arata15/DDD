@@ -40,5 +40,29 @@ namespace DDD.Infrastructure.SQLite
                 },
                 null);
         }
+        public IReadOnlyList<WeatherEntity> GetData()
+        {
+            string sql = @"
+            select A.AreaId,
+            ifnull(B.AreaName,'') as AreaName,
+            A.DataDate,
+            A.Condition,
+            A.Tempereture
+            from Weather A
+            left outer join Areas B
+            on A.AreaId = B.AreaId
+            ";
+
+            return SQLiteHelper.Query(sql,
+                reader =>
+                {
+                    return new WeatherEntity(
+                            Convert.ToInt32(reader["AreaId"]),
+                            Convert.ToString(reader["AreaName"]),
+                            Convert.ToDateTime(reader["DataDate"]),
+                            Convert.ToInt32(reader["Condition"]),
+                            Convert.ToSingle(reader["Tempereture"])); ;
+                });
+        }
     }
 }
