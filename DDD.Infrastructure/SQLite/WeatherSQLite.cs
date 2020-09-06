@@ -64,5 +64,33 @@ namespace DDD.Infrastructure.SQLite
                             Convert.ToSingle(reader["Tempereture"])); ;
                 });
         }
+
+        public void Save(WeatherEntity weather)
+        {
+            string insert = @"
+            insert into Weather
+            (AreaId,DataDate,Condition,Tempereture)
+            values
+            (@AreaId,@DataDate,@Condition,@Tempereture)
+            ";
+
+            string update = @"
+            update Weather
+            set Condition = @Condition,
+                Tempereture = @Tempereture
+            where AreaId = @AreaId
+            and DataDate = @DataDate
+            ";
+
+            var args = new List<SQLiteParameter>
+            {
+                new SQLiteParameter("@AreaId",weather.AreaID.Value),
+                new SQLiteParameter("@DataDate",weather.DataDate),
+                new SQLiteParameter("@Condition",weather.Condition.Value),
+                new SQLiteParameter("@Tempereture",weather.Temperature.Value)
+            };
+
+            SQLiteHelper.Execute(insert, update, args.ToArray());
+        }
     }
 }

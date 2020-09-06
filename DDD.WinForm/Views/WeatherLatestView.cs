@@ -43,5 +43,13 @@ namespace DDD.WinForm
                 f.ShowDialog();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var f = new WeatherSaveView())
+            {
+                f.ShowDialog();
+            }
+        }
     }
 }
